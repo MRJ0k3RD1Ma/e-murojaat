@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=raqamli_uz_murojaat',
-    'username' => 'raqam_murojaat',
-    'password' => 'g!4P70br',
+    'dsn' => 'mysql:host=localhost;dbname=murojaatlar',
+    'username' => 'root',
+    'password' => '',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)

@@ -4,24 +4,36 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Service */
+/* @var $model app\models\ServiceLots */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="service-form">
+<div class="service-lots-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+                    <?= $form->field($model, 'lot_number')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'price')->textInput() ?>
+                    <?= $form->field($model, 'ads')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'status')->dropDownList(Yii::$app->params['service_status']) ?>
+                    <?= $form->field($model, 'service_id')->dropDownList(\yii\helpers\ArrayHelper::map(\app\models\Service::find()->all(),'id','name'),['disabled'=>true]) ?>
 
-    <div class="form-group">
-        <?= Html::submitButton('Saqlash', ['class' => 'btn btn-success']) ?>
+                    <?= $form->field($model, 'status')->dropDownList(Yii::$app->params['serive_lot_status']) ?>
+
+                    <?= $form->field($model, 'exp_date')->textInput(['type'=>'date']) ?>
+
+                    <div class="form-group">
+                        <?= Html::submitButton('Saqlash', ['class' => 'btn btn-success']) ?>
+                    </div>
+
+                    <?php ActiveForm::end(); ?>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <?php ActiveForm::end(); ?>
 
 </div>

@@ -54,6 +54,17 @@ use yii\helpers\Url; ?>
             </ul>
         </li>
 
+
+
+        <li class="nav-item">
+            <a href="<?= Yii::$app->urlManager->createUrl(['/admin/service'])?>" class="nav-link <?=(Yii::$app->controller->id=='service')?'active':''?>">
+                <i class="nav-icon fas fa-list"></i>
+                <p>
+                    Хизматлар
+                </p>
+            </a>
+        </li>
+
         <li class="nav-item">
             <a href="<?= Yii::$app->urlManager->createUrl(['/admin/company-type'])?>" class="nav-link <?=(Yii::$app->controller->id=='company-type')?'active':''?>">
                 <i class="nav-icon fas fa-list"></i>
